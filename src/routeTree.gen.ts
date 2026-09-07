@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WatchAdBonusRouteImport } from './routes/watchAd-bonus'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WatchAdBonusRoute = WatchAdBonusRouteImport.update({
+  id: '/watchAd-bonus',
+  path: '/watchAd-bonus',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/watchAd-bonus': typeof WatchAdBonusRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/watchAd-bonus': typeof WatchAdBonusRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/watchAd-bonus': typeof WatchAdBonusRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/watchAd-bonus'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/watchAd-bonus'
+  id: '__root__' | '/' | '/watchAd-bonus'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  WatchAdBonusRoute: typeof WatchAdBonusRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/watchAd-bonus': {
+      id: '/watchAd-bonus'
+      path: '/watchAd-bonus'
+      fullPath: '/watchAd-bonus'
+      preLoaderRoute: typeof WatchAdBonusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  WatchAdBonusRoute: WatchAdBonusRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
