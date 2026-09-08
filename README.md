@@ -1,29 +1,117 @@
-# Welcome to your Lovable project
+# VELOOP Rewards – Watch Ads Page (Task 04)
 
-This project was built with [Lovable](https://lovable.dev).
+A complete UI/UX redesign of the **Watch Ads** page for **VELOOP Rewards**, built as part of the
+VELOOP Rewards Frontend Internship Program (Task 04).
 
-## Build with Lovable
+## Project Overview
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Watch Ads is one of the core earning modules of VELOOP Rewards. Users watch short advertisements
+and earn **VEs (VELOOP Earn Tokens)**, which can later be converted into real cash and withdrawn to
+their linked bank account.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+This project rebuilds that page from scratch with a premium, trustworthy, gamified and fully
+responsive interface. No existing design was copied — the layout, color system, components and
+interactions are all new.
 
-## Development
+## Features
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+- **Premium hero section** – headline, total VEs earned, today's earnings, available ads, total ads
+  completed and an animated daily earnings progress ring.
+- **Statistics section** – animated counters for today's earnings, lifetime VEs, ads watched today
+  and remaining ads, including live cash-value conversion.
+- **Available ads list** – 6 advertisement cards with filters (All / Available / Completed / Bonus).
+- **Watch ad cards** – illustration icon, brand, category, reward badge, duration and status
+  indicator.
+- **Premium CTA button** – hover animation, ripple effect, live playback progress, loading,
+  disabled, locked and completed states.
+- **Reward information cards** – how VEs are earned, cash conversion rate and bank withdrawal rules,
+  plus a security/trust banner.
+- **UI states** – loading skeletons, empty state, already-watched state and a success celebration
+  overlay when a reward is credited.
+- **Optional enhancements** – daily progress tracker, bonus reward banner linking to
+  `/watchAd-bonus`, limited-time bonus ads page, recent earnings timeline and celebration animation.
+- **Animations** – fade-in, card hover lift, reward glow, floating icons, shimmer skeletons and
+  counter animations, with `prefers-reduced-motion` support.
+- **Fully responsive** – 320px mobile up to full HD and ultra-wide displays.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+## Technology Stack
+
+- React 19
+- TypeScript
+- Vite
+- TanStack Router (file-based routing)
+- Tailwind CSS v4 design tokens (semantic theme in `src/styles.css`)
+- Lucide React icons
+- React Hooks (`useState`, `useEffect`, `useMemo`, custom `useCountUp`)
+
+> Note: this project runs on the Vite + TanStack Router setup instead of Bootstrap/CSS Modules.
+> The same requirements — modular components, scoped styling through a token-based design system,
+> React Icons-style icon set (Lucide) and hooks — are fully satisfied.
+
+## Folder Structure
+
+```text
+src/
+  components/
+    watch-ads/
+      AdCard.tsx           # Premium advertisement card
+      AdCardSkeleton.tsx   # Loading skeleton state
+      BonusBanner.tsx      # Limited-time bonus banner -> /watchAd-bonus
+      EarningsTimeline.tsx # Recent earnings timeline
+      HeroSection.tsx      # Hero + daily progress ring
+      InfoCards.tsx        # Reward information + trust banner
+      StatCard.tsx         # Animated statistics tile
+      StatesPanels.tsx     # Empty state + reward success overlay
+      WatchAdButton.tsx    # Premium CTA with all states
+  data/
+    ads.ts                 # Dummy advertisement + earnings data
+  hooks/
+    useCountUp.ts          # Animated counter hook
+  routes/
+    index.tsx              # Watch Ads page
+    watchAd-bonus.tsx      # Bonus rewards page
+  styles.css               # Design system (colors, gradients, animations)
 ```
 
-## Built with
+## Installation Guide
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+```bash
+git clone <your-repository-url>
+cd veloop-watch-ads
+npm install
+```
+
+## Running the Project
+
+```bash
+npm run dev      # start the development server
+npm run build    # production build
+npm run preview  # preview the production build
+```
+
+## Dummy Data
+
+All figures are static placeholders (no backend integration):
+
+| Metric                  | Value      |
+| ----------------------- | ---------- |
+| Today's Earnings        | 96 VEs     |
+| Total Lifetime Earnings | 12,450 VEs |
+| Weekly Earnings         | 1,260 VEs  |
+| Available Ads           | 12         |
+| Completed Ads Today     | 5          |
+
+## Live Demo
+
+Deployed link: _add your Vercel / Netlify URL here after deployment_
+
+## Deployment
+
+1. Push the source code to a public GitHub repository.
+2. Import the repository in Vercel or Netlify (build command `npm run build`).
+3. Verify the deployment on both desktop and mobile.
+4. Submit the GitHub repository URL and the live deployment URL.
+
+## Author
+
+_Add your name, email and GitHub profile here._

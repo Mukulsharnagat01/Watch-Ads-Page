@@ -53,7 +53,7 @@ export function AdCard({ ad, progress, onWatch, index }: AdCardProps) {
       style={{ animationDelay: `${index * 70}ms` }}
     >
       {ad.bonus ? (
-        <span className="absolute right-4 top-4 flex items-center gap-1 rounded-full bg-gold-gradient px-2.5 py-1 text-[11px] font-bold text-gold-foreground animate-reward-glow">
+        <span className="absolute right-7 top-7 z-10 flex items-center gap-1 whitespace-nowrap rounded-full bg-gold-gradient px-2.5 py-1 text-[11px] font-bold text-gold-foreground animate-reward-glow">
           <Sparkles className="size-3" />
           Bonus Ad
         </span>
