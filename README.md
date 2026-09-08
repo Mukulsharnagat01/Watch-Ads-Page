@@ -103,4 +103,4 @@ All figures are static placeholders (no backend integration):
 
 ## Live Demo
 
-Deployed link: _add your Vercel / Netlify URL here after deployment_
+Deployed link: https://watch-ads-page.onrender.com/
