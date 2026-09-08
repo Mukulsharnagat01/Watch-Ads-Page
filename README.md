@@ -1,4 +1,4 @@
-# VELOOP Rewards – Watch Ads Page (Task 04)
+# VELOOP Rewards – Watch Ads Page
 
 A complete UI/UX redesign of the **Watch Ads** page for **VELOOP Rewards**, built as part of the
 VELOOP Rewards Frontend Internship Program (Task 04).
@@ -104,14 +104,3 @@ All figures are static placeholders (no backend integration):
 ## Live Demo
 
 Deployed link: _add your Vercel / Netlify URL here after deployment_
-
-## Deployment
-
-1. Push the source code to a public GitHub repository.
-2. Import the repository in Vercel or Netlify (build command `npm run build`).
-3. Verify the deployment on both desktop and mobile.
-4. Submit the GitHub repository URL and the live deployment URL.
-
-## Author
-
-_Add your name, email and GitHub profile here._
